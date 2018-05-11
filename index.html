@@ -16,16 +16,23 @@
   il.load("inimigo1", "enemy_1.png");
   il.load("inimigo2", "enemy_2.png");
   il.load("inimigo3", "enemy_3.png");
-  //img.src = "https://opengameart.org/sites/default/files/license_images/cc0.png";
+  il.load("inimigo5", "https://opengameart.org/sites/default/files/license_images/cc0.png");
+  il.load("inimigo6", "https://a.disquscdn.com/uploads/mediaembed/images/3052/5638/original.jpg");
   var ang = 0;
   function passo(t){
+    requestAnimationFrame(passo);
     ctx.fillStyle = "black";
     ctx.fillRect(0,0, canvas.width, canvas.height);
+    if(il.loaded<il.size) {
+      ctx.fillStyle = "white";
+      ctx.fillText("Carregando imagens... "+(100*il.loaded/il.size).toFixed(2)+"%", 20, 100);
+      console.log("Não terminou de carregar...");
+      return;
+    };
 
     il.draw(ctx, "nave", 150, 100);
     il.drawSize(ctx, "inimigo1", 50, 100,16,16);
     il.drawAngle(ctx, "inimigo3", 150, 50,ang++);
-    requestAnimationFrame(passo);
   }
 
   requestAnimationFrame(passo);

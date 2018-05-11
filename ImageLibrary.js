@@ -1,10 +1,18 @@
 function ImageLibrary(){
   this.images = {};
+  this.loaded = 0;
+  this.size = 0;
 }
 
 ImageLibrary.prototype.load = function (key,url) {
   var img = new Image();
   this.images[key] = img;
+  this.size++;
+  var that = this;
+  img.addEventListener('load', function(){
+    that.loaded++;
+    console.log(key, "terminou de carregar:", that.loaded,that.size);
+  })
   img.src = url;
 };
 
