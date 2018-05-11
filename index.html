@@ -18,6 +18,7 @@
   il.load("inimigo3", "enemy_3.png");
   il.load("inimigo5", "https://opengameart.org/sites/default/files/license_images/cc0.png");
   il.load("inimigo6", "https://a.disquscdn.com/uploads/mediaembed/images/3052/5638/original.jpg");
+  il.load("sheet", "ships-preview.png");
   var ang = 0;
   function passo(t){
     requestAnimationFrame(passo);
@@ -31,6 +32,7 @@
     };
 
     il.draw(ctx, "nave", 150, 100);
+    il.drawClip(ctx, "sheet", 32, 159, 32, 32, 10,10);
     il.drawSize(ctx, "inimigo1", 50, 100,16,16);
     il.drawAngle(ctx, "inimigo3", 150, 50,ang++);
   }
