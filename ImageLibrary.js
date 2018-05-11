@@ -1,0 +1,3 @@
+function ImageLibrary(){
+  this.images = {};
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="ImageLibrary.js" charset="utf-8"></script>
+  </head>
+  <body>
+<canvas> </canvas>
+<!--<img src="player_ship.png" />-->
+<script>
+  var canvas = document.getElementsByTagName("canvas")[0];
+  var ctx = canvas.getContext("2d");
+  var img = new Image();
+  img.src = "player_ship.png";
+  //img.src = "https://opengameart.org/sites/default/files/license_images/cc0.png";
+
+  function passo(t){
+    ctx.fillStyle = "black";
+    ctx.fillRect(0,0, canvas.width, canvas.height);
+
+    ctx.drawImage(img, 150, 100);
+    requestAnimationFrame(passo);
+  }
+
+  requestAnimationFrame(passo);
+
+
+
+</script>
+  </body>
+</html>
