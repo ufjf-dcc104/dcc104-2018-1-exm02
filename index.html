@@ -13,6 +13,9 @@
   var ctx = canvas.getContext("2d");
   var il = new ImageLibrary();
   il.load("nave", "player_ship.png");
+  il.load("inimigo1", "enemy_1.png");
+  il.load("inimigo2", "enemy_2.png");
+  il.load("inimigo3", "enemy_3.png");
   //img.src = "https://opengameart.org/sites/default/files/license_images/cc0.png";
 
   function passo(t){
@@ -20,6 +23,8 @@
     ctx.fillRect(0,0, canvas.width, canvas.height);
 
     il.draw(ctx, "nave", 150, 100);
+    il.drawSize(ctx, "inimigo1", 50, 100,16,16);
+    il.draw(ctx, "inimigo3", 150, 50);
     requestAnimationFrame(passo);
   }
 
