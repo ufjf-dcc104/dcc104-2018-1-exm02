@@ -22,7 +22,9 @@
   il.load("sheet", "ships-preview.png");
   var al = new AudioLibrary();
   al.load("shotgun-fire", "shotgun.mp3");
-  al.play("shotgun-fire");
+  for (var i = 0; i < 10; i++) {
+    al.play("shotgun-fire");
+  }
   var ang = 0;
   function passo(t){
     requestAnimationFrame(passo);
