@@ -22,17 +22,16 @@
   il.load("sheet", "ships-preview.png");
   var al = new AudioLibrary();
   al.load("shotgun-fire", "shotgun.mp3");
-  for (var i = 0; i < 10; i++) {
-    al.play("shotgun-fire");
-  }
+  al.load("plane", "http://soundbible.com/grab.php?id=2219&type=mp3");
+//    al.play("shotgun-fire");
   var ang = 0;
   function passo(t){
     requestAnimationFrame(passo);
     ctx.fillStyle = "black";
     ctx.fillRect(0,0, canvas.width, canvas.height);
-    if(il.loaded<il.size) {
+    if(il.loaded+al.loaded<il.size+al.size) {
       ctx.fillStyle = "white";
-      ctx.fillText("Carregando imagens... "+(100*il.loaded/il.size).toFixed(2)+"%", 20, 100);
+      ctx.fillText("Carregando imagens e audio... "+(100*(il.loaded+al.loaded)/(il.size+al.loaded)).toFixed(2)+"%", 20, 100);
       console.log("Não terminou de carregar...");
       return;
     };
