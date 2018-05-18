@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <script src="ImageLibrary.js" charset="utf-8"></script>
+    <script src="AudioLibrary.js" charset="utf-8"></script>
   </head>
   <body>
 <canvas> </canvas>
@@ -19,6 +20,9 @@
   il.load("inimigo5", "https://opengameart.org/sites/default/files/license_images/cc0.png");
   il.load("inimigo6", "https://a.disquscdn.com/uploads/mediaembed/images/3052/5638/original.jpg");
   il.load("sheet", "ships-preview.png");
+  var al = new AudioLibrary();
+  al.load("shotgun-fire", "shotgun.mp3");
+  al.play("shotgun-fire");
   var ang = 0;
   function passo(t){
     requestAnimationFrame(passo);
