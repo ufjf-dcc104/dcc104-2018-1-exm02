@@ -37,3 +37,11 @@ ImageLibrary.prototype.drawAngle = function(ctx, key, x, y, ang){
 ImageLibrary.prototype.drawClip = function(ctx, key, sx, sy, w, h, dx, dy){
   ctx.drawImage(this.images[key], sx, sy, w, h, dx, dy, w, h);
 }
+
+ImageLibrary.prototype.drawClipAngle = function(ctx, key, sx, sy, w, h, dx, dy, ang){
+  ctx.save();
+  ctx.translate(dx, dy);
+  ctx.rotate(ang*Math.PI/180);
+  ctx.drawImage(this.images[key], sx, sy, w, h, -w/2, -h/2, w, h);
+  ctx.restore();
+}

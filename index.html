@@ -39,7 +39,8 @@
     il.draw(ctx, "nave", 150, 100);
     il.drawClip(ctx, "sheet", 32, 159, 32, 32, 10,10);
     il.drawSize(ctx, "inimigo1", 50, 100,16,16);
-    il.drawAngle(ctx, "inimigo3", 150, 50,ang++);
+    il.drawAngle(ctx, "inimigo3", 150, 50, ang++);
+    il.drawClipAngle(ctx, "sheet", 32, 159, 32, 32, 190, 50, -6*ang);
   }
 
   requestAnimationFrame(passo);
